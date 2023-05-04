@@ -1,0 +1,28 @@
+import datetime
+import os
+import time
+
+while True:
+    now = datetime.datetime.now()
+    if now.hour == 14:
+        os.system("""
+            osascript -e 'display notification "该休息啦！" with title "提醒"'""")
+        time.sleep(60*60) # 休息1个小时
+    else:
+        time.sleep(10*60) # 每隔10分钟检查一次
+```
+
+在Linux中使用notify-send命令：
+
+```
+import datetime
+import os
+import time
+
+while True:
+    now = datetime.datetime.now()
+    if now.hour == 14:
+        os.system("notify-send '提醒' '该休息啦！'")
+        time.sleep(60*60) # 休息1个小时
+    else:
+        time.sleep(10*60) # 每隔10分钟检查一次
