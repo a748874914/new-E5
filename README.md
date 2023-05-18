@@ -31,5 +31,13 @@ doc.save('output.docx')
         Param:=0.5, RelativeTo:=wdColumnWidthPoints
         ' 完成提示
     MsgBox "第三列已成功设置为左对齐。"
+    ' 获取第二列，并将其设置为左对齐
+    Dim col As Column
+    Set col = tbl.Columns(2)
+    col.SetWidth ColumnWidth:=col.Width, RulerStyle:=wdAdjustNone
+    col.SetWidth ColumnWidth:=col.Width, RulerStyle:=wdAdjustProportional, _
+        Param:=0.5, RelativeTo:=wdColumnWidthPoints
+        ' 完成提示
+    MsgBox "第二列已成功设置为左对齐。"
 End Sub
 
