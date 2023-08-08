@@ -39,5 +39,13 @@ doc.save('output.docx')
         Param:=0.5, RelativeTo:=wdColumnWidthPoints
         ' 完成提示
     MsgBox "第二列已成功设置为左对齐。"
+    Sub FillRowNumber()
+    Dim lastRow As Long
+    lastRow = Cells(Rows.Count, 1).End(xlUp).Row ' 获取最后一行的行号
+    
+    For i = 1 To lastRow
+        Cells(i, 3).Value = i ' 在第三列填入行号
+    Next i
 End Sub
+
 
